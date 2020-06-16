@@ -1,0 +1,2254 @@
+<!DOCTYPE html>
+<html lang="zh" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.72.0" />
+    <meta name="description" content="Documentation for Hugo Learn Theme">
+<meta name="author" content="Mathieu Cornic">
+
+    <link rel="icon" href="/images/favicon.png" type="image/png">
+
+    <title>SQL语句 :: Hugo 主题的 Learn 文档</title>
+
+    
+    <link href="/css/nucleus.css?1592284880" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1592284880" rel="stylesheet">
+    <link href="/css/hybrid.css?1592284880" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1592284880" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1592284880" rel="stylesheet">
+    <link href="/css/auto-complete.css?1592284880" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1592284880" rel="stylesheet">
+    <link href="/css/theme.css?1592284880" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1592284880" rel="stylesheet">
+    
+    <link href="/css/theme-red.css?1592284880" rel="stylesheet">
+    
+    
+
+    <script src="/js/jquery-3.3.1.min.js?1592284880"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/zh/mysql/requirements/sql%E8%AF%AD%E5%8F%A5/">
+    <nav id="sidebar" class="showVisitedLinks">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href="/">
+
+<svg id="grav-logo" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+	width="100%" height="100%"  viewBox="0 0 285.1 69.9" xml:space="preserve">
+<g>
+	<path d="M35,0c9.6,0,17.9,3.4,24.7,10.3c6.8,6.8,10.3,15,10.3,24.7c0,9.7-3.4,17.9-10.3,24.7c-6.8,6.8-15,10.3-24.7,10.3
+		c-9.7,0-17.9-3.4-24.7-10.3C3.4,52.8,0,44.6,0,34.9c0-9.6,3.4-17.9,10.3-24.7C17.1,3.4,25.3,0,35,0z M22.3,63.7
+		c0.3-7.4,0.3-14.7,0-22.1c-2.1-0.4-4-0.4-5.9,0c-0.2,0.8-0.2,2.5-0.1,4.9c0.1,2.3,0,3.9-0.3,4.8c-1.7-0.6-2.7-2.1-3.1-4.6
+		c-0.1-0.7-0.1-3.3-0.1-8c0-14.5-0.1-23-0.3-25.6c-3.6,4.1-5.6,7-5.9,8.5v10.9c0,4.5,0.1,8.1,0.2,10.9c0,0.4,0,1.3-0.1,2.8
+		c-0.1,1.2,0,2.1,0.1,2.6c0.1,0.6,1.1,2.1,2.8,4.7C13.2,58.7,17.5,62.2,22.3,63.7z M44.6,65.4c0.3-5,0.2-12.9-0.1-23.6
+		c-2.1-0.3-4.1-0.3-5.9,0c-0.2,2-0.2,5.1-0.1,9.5c0.1,4.3,0,7.5-0.1,9.5c-2.9,0.4-5,0.3-6.2-0.1c-0.2-5.6-0.2-15.2-0.1-28.7
+		c0.1-12.4,0-21.8-0.3-28.3c-2.4,0.1-4.3,0.6-5.7,1.3c-0.1,7.7-0.2,17.7-0.1,30.1c0,16.5,0,26.6,0,30.3c2.3,1.1,5.4,1.7,9.4,1.7
+		C38.9,66.9,42.1,66.4,44.6,65.4z M48.1,64.1c9.7-4.6,15.7-12,18-22.2c-1.8-0.2-3.8-0.3-6.1-0.3c-1.6,3.9-2.6,6.3-3.2,7.2
+		c-1.1,1.7-2,2.5-2.7,2.5C54,46,54,39.1,54,30.5c0-11.5,0-18.4,0-20.9c-1.4-1.4-3.3-2.5-5.7-3.4C48.1,6.3,48,6.4,48,6.7
+		c0,3.5,0,13.1,0,28.8C47.9,47.2,48,56.8,48.1,64.1z"/>
+</g>
+<g>
+	<path d="M116.6,51.3h-29c-0.5,0-0.9-0.1-1.3-0.2c-0.4-0.2-0.7-0.4-1-0.7c-0.3-0.3-0.5-0.6-0.7-1c-0.2-0.4-0.2-0.8-0.2-1.3V16.3h6.3
+		V45h25.8V51.3z"/>
+	<path d="M154.8,51.3h-22.9c-0.9,0-1.8-0.2-2.9-0.5c-1-0.3-2-0.8-2.9-1.5c-0.9-0.7-1.6-1.6-2.2-2.8c-0.6-1.1-0.9-2.5-0.9-4.2V19.5
+		c0-0.4,0.1-0.9,0.2-1.2c0.2-0.4,0.4-0.7,0.7-1c0.3-0.3,0.6-0.5,1-0.7c0.4-0.2,0.8-0.2,1.3-0.2h28.6v6.3h-25.4v19.8
+		c0,0.8,0.2,1.5,0.7,1.9s1.1,0.7,1.9,0.7h22.9V51.3z M151.9,37h-20v-6.4h20V37z"/>
+	<path d="M197.3,51.3H191v-8.6h-22.3v8.6h-6.3V33.8c0-2.6,0.4-4.9,1.3-7.1s2.1-4,3.7-5.5c1.6-1.5,3.4-2.8,5.5-3.6
+		c2.1-0.9,4.5-1.3,7-1.3h14.3c0.4,0,0.9,0.1,1.2,0.2c0.4,0.2,0.7,0.4,1,0.7s0.5,0.6,0.7,1c0.2,0.4,0.2,0.8,0.2,1.2V51.3z
+		 M168.7,36.4H191V22.6h-11.2c-0.2,0-0.6,0-1.2,0.1c-0.6,0.1-1.4,0.2-2.2,0.4c-0.8,0.2-1.7,0.6-2.6,1c-0.9,0.5-1.8,1.1-2.5,2
+		c-0.8,0.8-1.4,1.9-1.9,3.1c-0.5,1.2-0.7,2.8-0.7,4.5V36.4z"/>
+	<path d="M241.7,28.1c0,1.4-0.2,2.7-0.5,3.9c-0.4,1.1-0.8,2.1-1.5,3c-0.6,0.9-1.3,1.6-2.1,2.2c-0.8,0.6-1.6,1.1-2.5,1.5
+		c-0.9,0.4-1.8,0.7-2.6,0.9c-0.9,0.2-1.7,0.3-2.5,0.3l13.3,11.5h-9.8l-13.2-11.5h-4.6v-6.3H230c0.8-0.1,1.5-0.2,2.2-0.5
+		c0.7-0.3,1.2-0.6,1.7-1.1c0.5-0.5,0.9-1,1.1-1.6c0.3-0.6,0.4-1.4,0.4-2.2v-4c0-0.4,0-0.6-0.1-0.8c-0.1-0.2-0.2-0.3-0.3-0.4
+		c-0.1-0.1-0.3-0.1-0.4-0.2c-0.2,0-0.3,0-0.4,0h-20.9v28.7h-6.3V19.5c0-0.4,0.1-0.9,0.2-1.2c0.2-0.4,0.4-0.7,0.7-1
+		c0.3-0.3,0.6-0.5,1-0.7c0.4-0.2,0.8-0.2,1.3-0.2H234c1.4,0,2.6,0.3,3.6,0.8s1.8,1.2,2.4,1.9c0.6,0.8,1,1.6,1.3,2.5
+		c0.3,0.9,0.4,1.7,0.4,2.5V28.1z"/>
+	<path d="M285.1,48.6c0,0.5-0.1,0.9-0.3,1.3c-0.2,0.4-0.4,0.7-0.7,1c-0.3,0.3-0.6,0.5-1,0.7c-0.4,0.2-0.8,0.2-1.2,0.2
+		c-0.4,0-0.8-0.1-1.2-0.2c-0.4-0.1-0.8-0.4-1.1-0.7l-23.2-24.2v24.7h-6.3V19c0-0.7,0.2-1.2,0.5-1.8c0.4-0.5,0.8-0.9,1.4-1.2
+		c0.6-0.2,1.2-0.3,1.9-0.2s1.2,0.4,1.6,0.9l23.2,24.2V16.3h6.3V48.6z"/>
+</g>
+</svg>
+
+</a>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js?1592284880"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1592284880"></script>
+<script type="text/javascript">
+    
+        var baseurl = "https:\/\/devops.lijun.in\/zh";
+    
+</script>
+<script type="text/javascript" src="/js/search.js?1592284880"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/zh/ansible/" title="O - Ansible" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/zh/ansible/">
+          O - Ansible
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/zh/ansible/configuration/" title="Configuration" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/zh/ansible/configuration/">
+          Configuration
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/zh/docker/" title="O - Docker" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/zh/docker/">
+          O - Docker
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/zh/docker/docker-registry/" title="Docker Registry" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/zh/docker/docker-registry/">
+          Docker Registry
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/zh/docker/docker-registry/registry/" title="Registry" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/zh/docker/docker-registry/registry/">
+          Registry
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/zh/docker/docker-registry/harbor/" title="Harbor" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/zh/docker/docker-registry/harbor/">
+          Harbor
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/zh/gitlab/" title="O - Gitlab" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/zh/gitlab/">
+          O - Gitlab
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/zh/gitlab/configuration/" title="Configuration" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/zh/gitlab/configuration/">
+          Configuration
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/zh/jenkins/" title="O - Jenkins" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/zh/jenkins/">
+          O - Jenkins
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/zh/jenkins/requirements/" title="jenkins" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/zh/jenkins/requirements/">
+          jenkins
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/zh/jenkins/installation/" title="Instal" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/zh/jenkins/installation/">
+          Instal
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/zh/jenkins/style-customization/" title="Java微服务Docker构建" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/zh/jenkins/style-customization/">
+          Java微服务Docker构建
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/zh/maven/" title="O - Maven" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/zh/maven/">
+          O - Maven
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/zh/maven/configuration/" title="Configuration" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/zh/maven/configuration/">
+          Configuration
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/zh/mysql/" title="O - MySQL" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/zh/mysql/">
+          O - MySQL
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/zh/mysql/requirements/" title="操作" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/zh/mysql/requirements/">
+          操作
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/zh/mysql/requirements/mysql%E6%93%8D%E4%BD%9C/" title="MySQL操作" class="dd-item ">
+        <a href="/zh/mysql/requirements/mysql%E6%93%8D%E4%BD%9C/">
+        MySQL操作
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/zh/mysql/requirements/sql%E8%AF%AD%E5%8F%A5/" title="SQL语句" class="dd-item active">
+        <a href="/zh/mysql/requirements/sql%E8%AF%AD%E5%8F%A5/">
+        SQL语句
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/zh/mysql/requirements/%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%97%A5%E5%BF%97/" title="二进制日志" class="dd-item ">
+        <a href="/zh/mysql/requirements/%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%97%A5%E5%BF%97/">
+        二进制日志
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/zh/mysql/installation/" title="Installation" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/zh/mysql/installation/">
+          Installation
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/zh/mysql/configuration/" title="Configuration" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/zh/mysql/configuration/">
+          Configuration
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/zh/mysql/style-customization/" title="备份脚本" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/zh/mysql/style-customization/">
+          备份脚本
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/zh/mysql/style-customization/%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/" title="配置文件" class="dd-item ">
+        <a href="/zh/mysql/style-customization/%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/">
+        配置文件
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/zh/prometheus/" title="O - Prometheus" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/zh/prometheus/">
+          O - Prometheus
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/zh/prometheus/configuration/" title="Configuration" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/zh/prometheus/configuration/">
+          Configuration
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/zh/terraform/" title="O - Terraform" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/zh/terraform/">
+          O - Terraform
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/zh/terraform/configuration/" title="Configuration" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/zh/terraform/configuration/">
+          Configuration
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/zh/zabbix/" title="O - Zabbix" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/zh/zabbix/">
+          O - Zabbix
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/zh/zabbix/configuration/" title="Configuration" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/zh/zabbix/configuration/">
+          Configuration
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/zh/kvm/" title="O - KVM" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/zh/kvm/">
+          O - KVM
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/zh/kvm/requirements/" title="Requirements" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/zh/kvm/requirements/">
+          Requirements
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/zh/kvm/installation/" title="Installation" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/zh/kvm/installation/">
+          Installation
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3>More</h3>
+        <ul>
+          
+              <li> 
+                  <a class="padding" href="https://github.com/matcornic/hugo-theme-learn"><i class='fab fa-fw fa-github'></i> GitHub 仓库</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="https://devops.lijun.in/zh/showcase"><i class='fas fa-fw fa-camera'></i> 展示区</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="https://gohugo.io/"><i class='fas fa-fw fa-bookmark'></i> Hugo 文档</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="https://devops.lijun.in/zh/credits"><i class='fas fa-fw fa-bullhorn'></i> 鸣谢</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="prefooter">
+      <hr/>
+      <ul>
+      
+        <li>
+          <a class="padding">
+            <i class="fas fa-language fa-fw"></i>
+          <div class="select-style">
+            <select id="select-language" onchange="location = this.value;">
+          
+          
+          
+              
+              
+                  
+                    
+                    
+                      <option id="zh" value="https://devops.lijun.in/zh/mysql/requirements/sql%E8%AF%AD%E5%8F%A5/" selected>简体中文</option>
+                    
+                  
+              
+                  
+              
+          
+        </select>
+        <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+          width="255px" height="255px" viewBox="0 0 255 255" style="enable-background:new 0 0 255 255;" xml:space="preserve">
+          <g>
+            <g id="arrow-drop-down">
+              <polygon points="0,63.75 127.5,191.25 255,63.75 		" />
+            </g>
+          </g>
+        </svg>
+        </div>
+        </a>
+        </li>
+      
+      
+      
+        <li><a class="padding" href="#" data-clear-history-toggle=""><i class="fas fa-history fa-fw"></i> Clear History</a></li>
+      
+      </ul>
+    </section>
+    
+    <section id="footer">
+      <center>
+    
+    <a class="github-button" href="https://github.com/matcornic/hugo-theme-learn/archive/master.zip" data-icon="octicon-cloud-download" aria-label="Download matcornic/hugo-theme-learn on GitHub">Download</a>
+
+    
+    <a class="github-button" href="https://github.com/matcornic/hugo-theme-learn" data-icon="octicon-star" data-show-count="true" aria-label="Star matcornic/hugo-theme-learn on GitHub">Star</a>
+
+    
+    <a class="github-button" href="https://github.com/matcornic/hugo-theme-learn/fork" data-icon="octicon-repo-forked" data-show-count="true" aria-label="Fork matcornic/hugo-theme-learn on GitHub">Fork</a>
+
+    <p>Built with <a href="https://github.com/matcornic/hugo-theme-learn"><i class="fas fa-heart"></i></a> from <a href="https://getgrav.org">Grav</a> and <a href="https://gohugo.io/">Hugo</a></p>
+</center>
+
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                  
+                  
+                  
+                  <div id="top-github-link">
+                    <a class="github-link" title='Edit this page' href="https://github.com/matcornic/hugo-theme-learn/edit/master/exampleSite/content/MySQL/requirements/SQL%e8%af%ad%e5%8f%a5.zh.md" target="blank">
+                      <i class="fas fa-code-branch"></i>
+                      <span id="top-github-link-text">Edit this page</span>
+                    </a>
+                  </div>
+                  
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/zh/'>Learn Theme for Hugo</a> > <a href='/zh/mysql/'>O - MySQL</a> > <a href='/zh/mysql/requirements/'>操作</a> > SQL语句
+          
+        
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#授权">授权</a></li>
+    <li><a href="#交叉连接cross-join">交叉连接：cross join</a></li>
+    <li><a href="#内连接inner-join">内连接：inner join</a></li>
+    <li><a href="#外连接left-join--right-join">外连接：left join ， right join</a></li>
+    <li><a href="#联合查询union-与-union-all">联合查询：union 与 union all</a></li>
+    <li><a href="#全连接full-join">全连接：full join</a></li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              SQL语句
+            </h1>
+          
+
+        
+
+
+<hr>
+<p>命令行：mysql</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mysql -u root -p -h 10.0.0.1 -P <span style="color:#ae81ff">3306</span>
+
+--host<span style="color:#f92672">=</span>host_name,    -h host_name：服务端地址；
+--user<span style="color:#f92672">=</span>user_name,    -u user_name：用户名；
+--port<span style="color:#f92672">=</span>port_num,     -P port_num：服务端端口；
+--socket<span style="color:#f92672">=</span>path,       -S path
+--database<span style="color:#f92672">=</span>db_name,  -D db_name：
+--compress,          -C：数据压缩传输
+--execute<span style="color:#f92672">=</span>statement, -e statement：非交互模式执行SQL语句；
+--vertical,          -E：查询结果纵向显示；
+--protocol<span style="color:#f92672">={</span>TCP|SOCKET|PIPE|MEMORY<span style="color:#f92672">}</span>：
+</code></pre></div><h2 id="授权">授权</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#960050;background-color:#1e0010">语法：</span>
+<span style="color:#66d9ef">GRANT</span> <span style="color:#66d9ef">ALL</span> [<span style="color:#66d9ef">PRIVILEGES</span>] <span style="color:#66d9ef">ON</span> db.tbl <span style="color:#66d9ef">TO</span> <span style="color:#e6db74">&#39;username&#39;</span><span style="color:#f92672">@</span><span style="color:#e6db74">&#39;host&#39;</span> IDENTIFIED <span style="color:#66d9ef">BY</span> <span style="color:#e6db74">&#39;password&#39;</span>;
+<span style="color:#960050;background-color:#1e0010">上述语法中，</span>db表示数据库的名字<span style="color:#960050;background-color:#1e0010">，可以使用</span><span style="color:#f92672">*</span><span style="color:#960050;background-color:#1e0010">通配，</span>tbl为表的名称<span style="color:#960050;background-color:#1e0010">，可以使用</span><span style="color:#f92672">*</span><span style="color:#960050;background-color:#1e0010">通配</span>
+
+<span style="color:#66d9ef">grant</span> <span style="color:#960050;background-color:#1e0010">权限</span> <span style="color:#66d9ef">on</span> <span style="color:#960050;background-color:#1e0010">数据库名</span>.<span style="color:#960050;background-color:#1e0010">表名</span> <span style="color:#66d9ef">to</span> <span style="color:#960050;background-color:#1e0010">用户名</span><span style="color:#f92672">@</span><span style="color:#e6db74">&#34;本地回环地址或localhost&#34;</span> identified <span style="color:#66d9ef">by</span> <span style="color:#e6db74">&#34;密码&#34;</span>
+<span style="color:#66d9ef">grant</span> <span style="color:#66d9ef">all</span> <span style="color:#66d9ef">privileges</span> <span style="color:#66d9ef">on</span> zsythink.<span style="color:#f92672">*</span> <span style="color:#66d9ef">to</span> zsy<span style="color:#f92672">@</span>localhost identified <span style="color:#66d9ef">by</span> <span style="color:#e6db74">&#39;zsythink&#39;</span>;
+<span style="color:#66d9ef">grant</span> <span style="color:#66d9ef">all</span> <span style="color:#66d9ef">privileges</span> <span style="color:#66d9ef">on</span> zsythink.<span style="color:#f92672">*</span> <span style="color:#66d9ef">to</span> zsy<span style="color:#f92672">@</span><span style="color:#ae81ff">127</span>.<span style="color:#ae81ff">0</span>.<span style="color:#ae81ff">0</span>.<span style="color:#ae81ff">1</span> identified <span style="color:#66d9ef">by</span> <span style="color:#e6db74">&#39;zsythink&#39;</span>;
+<span style="color:#960050;background-color:#1e0010">注意：上述两条命令都表示对</span>zsy用户开放zsythink数据库的所有权限<span style="color:#960050;background-color:#1e0010">，但是上述两条命令的针对的</span>zsy用户是不一样的<span style="color:#960050;background-color:#1e0010">，一个是</span>zsy<span style="color:#f92672">@</span>localhost用户<span style="color:#960050;background-color:#1e0010">，一个是</span>zsy<span style="color:#f92672">@</span><span style="color:#ae81ff">127</span>.<span style="color:#ae81ff">0</span>.<span style="color:#ae81ff">0</span>.<span style="color:#ae81ff">1</span><span style="color:#960050;background-color:#1e0010">用户，</span>mysql会认为这是两个用户<span style="color:#960050;background-color:#1e0010">。</span>
+<span style="color:#960050;background-color:#1e0010">权时</span>privileges关键字可省<span style="color:#960050;background-color:#1e0010">，示例如下</span>
+
+MySQL
+<span style="color:#66d9ef">grant</span> <span style="color:#66d9ef">all</span> <span style="color:#66d9ef">on</span> zsythink.<span style="color:#f92672">*</span> <span style="color:#66d9ef">to</span> zsy<span style="color:#f92672">@</span><span style="color:#ae81ff">127</span>.<span style="color:#ae81ff">0</span>.<span style="color:#ae81ff">0</span>.<span style="color:#ae81ff">1</span> identified  <span style="color:#66d9ef">by</span>  <span style="color:#e6db74">&#39;zsythink&#39;</span>;
+<span style="color:#ae81ff">1</span>
+<span style="color:#66d9ef">grant</span> <span style="color:#66d9ef">all</span> <span style="color:#66d9ef">on</span> zsythink.<span style="color:#f92672">*</span> <span style="color:#66d9ef">to</span> zsy<span style="color:#f92672">@</span><span style="color:#ae81ff">127</span>.<span style="color:#ae81ff">0</span>.<span style="color:#ae81ff">0</span>.<span style="color:#ae81ff">1</span> identified  <span style="color:#66d9ef">by</span>  <span style="color:#e6db74">&#39;zsythink&#39;</span>;
+
+FLUSH <span style="color:#66d9ef">PRIVILEGES</span>;
+</code></pre></div><p>select语句的基本用法，select语句的分组与聚合、多表查询等常用语法</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#960050;background-color:#1e0010">作死语句，数据量大</span>
+<span style="color:#66d9ef">select</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">from</span> tb1;
+<span style="color:#960050;background-color:#1e0010">表示从</span>tb1表中查询出所有数据<span style="color:#960050;background-color:#1e0010">，但是只显示前</span><span style="color:#ae81ff">3</span><span style="color:#960050;background-color:#1e0010">行。</span>
+<span style="color:#66d9ef">select</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">from</span> tb1 <span style="color:#66d9ef">limit</span> <span style="color:#ae81ff">3</span>;
+<span style="color:#960050;background-color:#1e0010">从</span>tb1表中查询出name字段与age字段的数据<span style="color:#960050;background-color:#1e0010">，即使这样写，也没有比上例的语句好多少，它仍然是显示表中的所有行的指定字段，表中的数据量较大时，这样写也是非常不好的，除非必要，一般不要这样写。</span>
+<span style="color:#66d9ef">select</span> name,age <span style="color:#66d9ef">from</span> tb1;
+<span style="color:#960050;background-color:#1e0010">从</span>tb1表中查询出符合条件的数据<span style="color:#960050;background-color:#1e0010">，使用</span>where字句给定条件<span style="color:#960050;background-color:#1e0010">，带有筛选条件的查询语句则会比上面两种查询语句好很多，如下示例中给出常用的条件表达式。</span>
+
+<span style="color:#960050;background-color:#1e0010">如下语句表示从</span>tb1表中查询出age等于25的行的name和age字段<span style="color:#960050;background-color:#1e0010">。</span>
+<span style="color:#66d9ef">select</span> name,age <span style="color:#66d9ef">from</span> tb1 <span style="color:#66d9ef">where</span> age <span style="color:#f92672">=</span> <span style="color:#ae81ff">25</span>;
+<span style="color:#960050;background-color:#1e0010">查出</span>tb1表中age不等于28的数据<span style="color:#960050;background-color:#1e0010">。</span>
+<span style="color:#66d9ef">select</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">from</span> tb1 <span style="color:#66d9ef">where</span> age <span style="color:#f92672">!=</span> <span style="color:#ae81ff">28</span>;
+<span style="color:#960050;background-color:#1e0010">如下两条语句均表示从</span>tb1表中查询出age大于等于25并且小于等于28的数据<span style="color:#960050;background-color:#1e0010">。</span>
+<span style="color:#66d9ef">select</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">from</span> tb1 <span style="color:#66d9ef">where</span> age <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">25</span> <span style="color:#66d9ef">and</span> age <span style="color:#f92672">&lt;=</span><span style="color:#ae81ff">28</span>;
+<span style="color:#66d9ef">select</span> name,age <span style="color:#66d9ef">from</span> tb1 <span style="color:#66d9ef">where</span> age <span style="color:#66d9ef">between</span> <span style="color:#ae81ff">25</span> <span style="color:#66d9ef">and</span> <span style="color:#ae81ff">28</span>;
+<span style="color:#960050;background-color:#1e0010">如下语句表示从</span>tb1表中查询出age等于25或者等于28的数据<span style="color:#960050;background-color:#1e0010">。</span>
+<span style="color:#66d9ef">select</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">from</span> tb1 <span style="color:#66d9ef">where</span> age <span style="color:#f92672">=</span> <span style="color:#ae81ff">25</span> <span style="color:#66d9ef">or</span> age <span style="color:#f92672">=</span> <span style="color:#ae81ff">28</span>;
+<span style="color:#960050;background-color:#1e0010">如下语句表示从</span>tb1表中查询出age不在25到28区间中的数据<span style="color:#960050;background-color:#1e0010">。</span>
+<span style="color:#66d9ef">select</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">from</span> tb1 <span style="color:#66d9ef">where</span> age <span style="color:#66d9ef">not</span> <span style="color:#66d9ef">between</span> <span style="color:#ae81ff">25</span> <span style="color:#66d9ef">and</span> <span style="color:#ae81ff">28</span>;
+<span style="color:#66d9ef">select</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">from</span> tb1 <span style="color:#66d9ef">where</span> age <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">25</span> <span style="color:#66d9ef">or</span> age <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">28</span>;
+<span style="color:#960050;background-color:#1e0010">使用</span>like结合通配符进行模糊查询<span style="color:#960050;background-color:#1e0010">，如下语句表示查询</span>tb1表中name字段以j开头的数据<span style="color:#960050;background-color:#1e0010">，</span><span style="color:#e6db74">&#34;%&#34;</span><span style="color:#960050;background-color:#1e0010">在查询语句中表示</span><span style="color:#e6db74">&#34;任意长度的任意字符&#34;</span>.
+<span style="color:#66d9ef">select</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">from</span> tb1 <span style="color:#66d9ef">where</span> name <span style="color:#66d9ef">like</span> <span style="color:#e6db74">&#39;j%&#39;</span>;
+<span style="color:#960050;background-color:#1e0010">如下语句表示查询</span>tb1表中name字段以t开头<span style="color:#960050;background-color:#1e0010">，并且只有三个字符的数据，</span><span style="color:#e6db74">&#34;_&#34;</span><span style="color:#960050;background-color:#1e0010">在查询语句中表示</span><span style="color:#e6db74">&#34;任意单个字符&#34;</span><span style="color:#960050;background-color:#1e0010">，下例中的语句中，在</span>t后面跟随了两个<span style="color:#e6db74">&#34;_&#34;</span>,<span style="color:#960050;background-color:#1e0010">表示</span>t后面的两个字符可以是任意字符<span style="color:#960050;background-color:#1e0010">。</span>
+<span style="color:#66d9ef">select</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">from</span> tb1 <span style="color:#66d9ef">where</span> name <span style="color:#66d9ef">like</span> <span style="color:#e6db74">&#39;t__&#39;</span>;
+<span style="color:#960050;background-color:#1e0010">也许你觉得还不够灵活，或许你更习惯使用正则表达式作为匹配条件，没有关系，满足你，我们可以使用</span>rlike结合正则表达式<span style="color:#960050;background-color:#1e0010">，对字符数据进行模糊查询，所以，查询语句能有多强大的功能，就看你的正则表达式运用的有多熟练了，示例语句如下。</span>
+
+<span style="color:#960050;background-color:#1e0010">如下语句表示查询出</span>tb1表中name字段以t开头的所有数据<span style="color:#960050;background-color:#1e0010">，正则表达式的含义此处不再赘述。</span>
+<span style="color:#66d9ef">select</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">from</span> tb1 <span style="color:#66d9ef">where</span> name rlike <span style="color:#e6db74">&#39;^t.*&#39;</span>;
+<span style="color:#960050;background-color:#1e0010">我们还可以从指定的列表中匹配对应的条件，使用</span>in关键字指定列表<span style="color:#960050;background-color:#1e0010">，示例如下，如下语句表示从</span>tb1表中查找出age等于22<span style="color:#960050;background-color:#1e0010">、</span><span style="color:#ae81ff">23</span><span style="color:#960050;background-color:#1e0010">、</span><span style="color:#ae81ff">24</span><span style="color:#960050;background-color:#1e0010">或</span><span style="color:#ae81ff">25</span><span style="color:#960050;background-color:#1e0010">中的任意一个的行的所有数据。</span>
+<span style="color:#66d9ef">select</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">from</span> tb1 <span style="color:#66d9ef">where</span> age <span style="color:#66d9ef">in</span> (<span style="color:#ae81ff">22</span>,<span style="color:#ae81ff">23</span>,<span style="color:#ae81ff">24</span>,<span style="color:#ae81ff">25</span>);
+<span style="color:#960050;background-color:#1e0010">除了使用</span><span style="color:#66d9ef">in</span><span style="color:#960050;background-color:#1e0010">，我们还可以使用</span><span style="color:#66d9ef">not</span> <span style="color:#66d9ef">in</span>,<span style="color:#960050;background-color:#1e0010">聪明如你一定秒懂，</span><span style="color:#66d9ef">not</span> in就是in的对立面<span style="color:#960050;background-color:#1e0010">，比如，查询出</span>tb1表中age不等于28<span style="color:#960050;background-color:#1e0010">、</span><span style="color:#ae81ff">43</span><span style="color:#960050;background-color:#1e0010">、</span><span style="color:#ae81ff">33</span><span style="color:#960050;background-color:#1e0010">的数据。</span>
+<span style="color:#66d9ef">select</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">from</span> tb1 <span style="color:#66d9ef">where</span> age <span style="color:#66d9ef">not</span> <span style="color:#66d9ef">in</span> (<span style="color:#ae81ff">28</span>,<span style="color:#ae81ff">33</span>,<span style="color:#ae81ff">43</span>);
+<span style="color:#960050;background-color:#1e0010">我们可以对查询出的数据进行排序，如下示例表示查询</span>tb1表中的所有数据<span style="color:#960050;background-color:#1e0010">，并且按照</span>age的值从小到大进行升序排序<span style="color:#960050;background-color:#1e0010">，</span>asc表示升序排序<span style="color:#960050;background-color:#1e0010">，</span>asc可省<span style="color:#960050;background-color:#1e0010">，默认使用升序排序。</span>
+<span style="color:#66d9ef">select</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">from</span> tb1 <span style="color:#66d9ef">order</span> <span style="color:#66d9ef">by</span> age;
+<span style="color:#66d9ef">select</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">from</span> tb1 <span style="color:#66d9ef">order</span> <span style="color:#66d9ef">by</span> age <span style="color:#66d9ef">asc</span>;
+<span style="color:#960050;background-color:#1e0010">如下示例表示查询</span>tb1表中的所有数据<span style="color:#960050;background-color:#1e0010">，并且按照</span>age的值从大到小进行降序排序
+<span style="color:#66d9ef">select</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">from</span> tb1 <span style="color:#66d9ef">order</span> <span style="color:#66d9ef">by</span> age <span style="color:#66d9ef">desc</span>;
+<span style="color:#960050;background-color:#1e0010">查询</span>tb1表中的所有数据<span style="color:#960050;background-color:#1e0010">，并且按照</span>age的值从大到小进行降序排序<span style="color:#960050;background-color:#1e0010">，如果多行之间的</span>age字段的值相同时<span style="color:#960050;background-color:#1e0010">，这些行再根据</span>name字段进行升序排序<span style="color:#960050;background-color:#1e0010">。</span>
+<span style="color:#66d9ef">select</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">from</span> tb1 <span style="color:#66d9ef">order</span> <span style="color:#66d9ef">by</span> age <span style="color:#66d9ef">desc</span>,name <span style="color:#66d9ef">asc</span>;
+<span style="color:#960050;background-color:#1e0010">我们可以在查询某字段的时候去重，使用</span>DISTINCT关键字表示去重查询<span style="color:#960050;background-color:#1e0010">，比如，查询学生的年龄并去重显示年龄。</span>
+<span style="color:#66d9ef">select</span> <span style="color:#66d9ef">distinct</span> age <span style="color:#66d9ef">from</span> students;
+<span style="color:#960050;background-color:#1e0010">我们也可以在查询时给字段添加别名，以便显示为我们指定的列名。</span>
+<span style="color:#66d9ef">select</span> name <span style="color:#66d9ef">as</span> StuName,age <span style="color:#66d9ef">from</span> tb1;
+</code></pre></div><p>select语句中的分组与聚合</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">select语句中group <span style="color:#66d9ef">by</span> <span style="color:#960050;background-color:#1e0010">的使用，见名知义，</span><span style="color:#66d9ef">group</span> by就是用来分组的<span style="color:#960050;background-color:#1e0010">。</span>
+<span style="color:#960050;background-color:#1e0010">之所以要对数据进行分组，往往是为了在分组以后，对分组后的数据进行聚合操作</span>
+</code></pre></div><p><img src="../../content/MySQL/requirements/images/011217_0208_1.png" alt=""></p>
+<p>students表中的数据如上图所示</p>
+<p>现在，我们使用students表中的数据，进行分组，我们可以根据性别分组，也可以根据年龄分组。</p>
+<p>比如，我们根据性别对上述数据进行分组，示例如下。</p>
+<p><img src="http://www.zsythink.net/wp-content/uploads/2017/01/011217_0208_2.png" alt="mysql/mariadb知识点总结（15）：select语句总结之二：分组与聚合"></p>
+<p>可以看到，根据性别分组后，只分出了两组，因为性别只有男和女两种性别，所以只分出了两组。</p>
+<p>而且每组只显示一条数据，也就是每组的第一条数据，注意，这可能与我们想象的不太一样，分组后每组只显示一条数据。</p>
+<p>我们说过，分组的目的往往是对分组后的数据进行&quot;聚合操作&rdquo;,设么意思呢？我们先看示例，看完示例再解释，示例如下</p>
+<p><img src="http://www.zsythink.net/wp-content/uploads/2017/01/011217_0208_3.png" alt="mysql/mariadb知识点总结（15）：select语句总结之二：分组与聚合"></p>
+<p>上例中，我们通过性别对数据进行了分组，然后算出了每组中的人员数量，也就是说，我们算出了女性有10人，男性有15人。</p>
+<p>而上例中的count(stuid)就是一种&quot;聚合操作&rdquo;,count()是一种聚合函数，这个聚合函数能够算出对应数据的条目数量。</p>
+<p>上例中的count(stuid)表示算出分组后的每组的stuid的数量，这就是所谓的&quot;分组的目的往往是为了聚合操作&quot;的含义。</p>
+<p>那么，我们再举一个列子，比如，我们仍然按照性别分组，然后，算出男生与女生的平均年龄，可以使用如下语句。</p>
+<p><img src="http://www.zsythink.net/wp-content/uploads/2017/01/011217_0208_4.png" alt="mysql/mariadb知识点总结（15）：select语句总结之二：分组与聚合"></p>
+<p>可以看到，根据性别分组，然后算出每组的平均年龄，男性平均年龄33（普遍成熟稳重），女性平均年龄19（花姑娘大大滴）</p>
+<p>聪明如你一定猜到了，avg( )也是一种聚合函数，avg（age）就是求年龄的平均值。</p>
+<p>那么，mysql中常用的聚合函数有哪些呢，如下？</p>
+<p>min(col)返回指定列的最小值</p>
+<p>max(col)返回指定列的最大值</p>
+<p>avg（col）返回指定咧的平均值</p>
+<p>count（col）返回指定列中非null值的个数</p>
+<p>sum（col）返回指定列的所有值之和</p>
+<p>group_concat(col)返回指定列的值，但是会分组显示，也就是说分组显示指定列组合后的结果，这样说不容易明白，我们来看个例子，比如，将学生表中的学生按性别分组，并且显示男生组有哪些学生，女生组有哪些学生，示例如下。</p>
+<p><img src="http://www.zsythink.net/wp-content/uploads/2017/01/011217_0208_5.png" alt="mysql/mariadb知识点总结（15）：select语句总结之二：分组与聚合"></p>
+<p>那么，如果我们想要对分组后的信息再次过滤，该怎么办呢，举个例子，如下:</p>
+<p><img src="http://www.zsythink.net/wp-content/uploads/2017/01/011217_0208_6.png" alt="mysql/mariadb知识点总结（15）：select语句总结之二：分组与聚合"></p>
+<p>从上例可以看出，如果想要对分组过后的信息再次过滤，可以使用having关键字。</p>
+<p>好了，此处总结一些常用示例：</p>
+<p>查询students表，以性别为分组，求出分组后的年龄之和。</p>
+<p>MySQL</p>
+<table>
+<thead>
+<tr>
+<th>1</th>
+<th>select gender,sum(age) from students group by gender;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>查询students表，以classid分组，显示平均年龄大于25的classid。</p>
+<p>MySQL</p>
+<table>
+<thead>
+<tr>
+<th>1</th>
+<th>select classid,avg(age) as avgage from students group by classid having avgage &gt; 25;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>查询students表，以性别字段gender分组，显示各组中年龄大于19的学员的年龄的总和。</p>
+<p>MySQL</p>
+<table>
+<thead>
+<tr>
+<th>1</th>
+<th>select sum(age) from students where age &gt; 19 group by gender;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>分组与聚合先总结到这里，下一篇文章中将会总结多表查询的select语句，直达链接 <a href="http://www.zsythink.net/archives/1105">select语句总结之多表查询</a></p>
+<p>这篇文章将会详细的总结mysql中多表查询的相关语句，即mysql中的 交叉连接、内连接、外链接、左连接、右连接、联合查询、全连接。</p>
+<p>在本博客中，&ldquo;mysql&quot;是一个系列文章，这些文章主要对mysql/mariadb的常用知识点进行了总结，每一篇博客总结的知识点有所不同，具体内容可参考mysql文章列表。</p>
+<p>mysql文章列表直达链接：<a href="http://www.zsythink.net/archives/tag/mysql/">mysql知识点总结</a></p>
+<p>多表查询顾名思义就是数据同时从多张表中获得，查询语句牵扯到多张表，多表查询有多种语法，多种使用场景，不同的场景需要不同的语法，我们先不考虑那么多，从头开始理解一下多表查询。</p>
+<h2 id="交叉连接cross-join">交叉连接：cross join</h2>
+<p>既然是多表查询，那么我们先来看看两张非常简单的表，我们就以这两张表为例，进行演示。</p>
+<p><img src="http://www.zsythink.net/wp-content/uploads/2017/01/011317_0113_1.png" alt="mysql/mariadb知识点总结（16）：select语句总结之三：多表查询"></p>
+<p>上图中，我们通过两条语句分别查询了表1与表2的内容，t1表中有3条数据，t2表中有2条数据，那么同时查两张表，会查询出什么内容呢？我们来实验一下。</p>
+<p><img src="http://www.zsythink.net/wp-content/uploads/2017/01/011317_0113_2.png" alt="mysql/mariadb知识点总结（16）：select语句总结之三：多表查询"></p>
+<p>上图中，我们只是单纯的将两张表使用同一条select语句查询了出来，并没有添加任何额外的过滤条件，仔细观察查询出的数据，可以发现，当使用上图中的语句时，t1表中的每一行记录，都与t2表中的任意一条记录相关联，同样，t2表中的每一行记录，都与t1表中的任意一条记录相关联。</p>
+<p>换句话说，两张表中的数据会以下图中的方式被&quot;交叉连接&quot;在一起，然后展示出来。</p>
+<p><img src="http://www.zsythink.net/wp-content/uploads/2017/01/011317_0113_3.png" alt="mysql/mariadb知识点总结（16）：select语句总结之三：多表查询"></p>
+<p>当然，上述示例中,t1表中有3条数据，t2表中有2条数据,所以&quot;交叉连接&quot;后如上图，如果t1表中有3条记录，t2表中也有3条记录，那么交叉连接后的结果如下图。</p>
+<p><img src="http://www.zsythink.net/wp-content/uploads/2017/01/011317_0113_4.png" alt="mysql/mariadb知识点总结（16）：select语句总结之三：多表查询"></p>
+<p>我们把上述&quot;没有任何限制条件的连接方式&quot;称之为&quot;交叉连接&rdquo;，&ldquo;交叉连接&quot;后得到的结果跟线性代数中的&quot;笛卡尔乘积&quot;一样。</p>
+<p>可以看到，使用交叉连接时，任意一张表中的记录多出一行，&ldquo;交叉连接&quot;的数量都会增长很多。</p>
+<p>上述示例中，我们只使用了两张表，而且两张表中的数据非常少，如果我们同时将多张表使用上述语句查询，而且每张表中的数据又比较多，那么可以想象，我们得到结果的时间可能会非常长，而且得到结果以后，可能也没有太大的意义，所以，通过交叉连接的方式进行多表查询的这种方法，我们并不常用，而且我们应该尽量避免这种查询。</p>
+<p>&ldquo;交叉连接&quot;的英文原文为&quot;cross join&rdquo;,被咱们翻译为交叉连接，其实，上述示例中的语句我们可以换一种写法，两种写法能够获取到相同的结果，示例如下</p>
+<p><img src="http://www.zsythink.net/wp-content/uploads/2017/01/011317_0113_5.png" alt="mysql/mariadb知识点总结（16）：select语句总结之三：多表查询"></p>
+<p>其实，上图中的第一种写法才是官方建议的最标准的写法，即为使用&quot;cross join&quot;将多张表使用&quot;交叉连接&quot;连接起来，当然，上述实例中，我们只使用了t1与t2两张表作为示例，我们也可以将多张表使用&quot;cross join&quot;连接起来，比如将t1,t2,t3三张表使用&quot;cross join&quot;连接起来，示例语句如下：</p>
+<p>MySQL</p>
+<table>
+<thead>
+<tr>
+<th>1</th>
+<th>select * from t1 cross join t2 cross join t3;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>在mysql中，上述查询语句查询出的结果与如下语句相同。</p>
+<p>MySQL</p>
+<table>
+<thead>
+<tr>
+<th>1</th>
+<th>select * from t1,t2,t3;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="内连接inner-join">内连接：inner join</h2>
+<p>既然&quot;交叉连接&quot;不常用，那么肯定有其他的常用的&quot;多表查询方式&rdquo;。</p>
+<p>我们来看看另一种常用的多表查询的方式：内连接</p>
+<p>仍然拿刚才的t1表与t2表为例，此处回顾一下这两张表的内容。</p>
+<p><img src="http://www.zsythink.net/wp-content/uploads/2017/01/011317_0113_6.png" alt="mysql/mariadb知识点总结（16）：select语句总结之三：多表查询"></p>
+<p>那么什么是&quot;内连接&quot;呢？我们可以把&quot;内连接&quot;理解成&quot;两张表中同时符合某种条件的数据记录的组合&rdquo;，这样说不容易理解，我们来动手做一个小例子，示例如下。</p>
+<p><img src="http://www.zsythink.net/wp-content/uploads/2017/01/011317_0113_7.png" alt="mysql/mariadb知识点总结（16）：select语句总结之三：多表查询"></p>
+<p>上图中的sql语句就使用了&quot;内连接&rdquo;，上图中的sql语句查询出了t1表与t2表中id号相同的记录，并把两表中id号相同的记录连接在了一起，我们对比着&quot;内连接&quot;的概念，来理解上图中的sql语句，我们说过内连接就是&quot;两张表中同时符合某种条件的数据记录的组合&rdquo;，那么上图中，&ldquo;where t1.t1id=t2.t2id&quot;就是所谓的&quot;符合某种条件&rdquo;，上图中查询出的结果就是&quot;两张表中同时符合某种条件的数据记录的组合&rdquo;，这其实就是所谓的&quot;内连接&rdquo;。</p>
+<p>聪明如你一定发现了，在mysql中，&ldquo;内连接&quot;的语句与&quot;交叉连接&quot;的语句的不同之处就是&quot;内连接&quot;语句比&quot;交叉连接&quot;有更多的限制条件，这样理解&quot;内连接&rdquo;，会不会容易一点呢？</p>
+<p>&ldquo;内连接&quot;的英文原文为&quot;inner join&rdquo;，所以，刚才的内连接sql语句还能换成另一种写法，两种写法得到的结果是相同的，示例如下。</p>
+<p><img src="http://www.zsythink.net/wp-content/uploads/2017/01/011317_0113_8.png" alt="mysql/mariadb知识点总结（16）：select语句总结之三：多表查询"></p>
+<p>上图中的第一种语法才是官方建议的标准写法，所以，我们在使用&quot;内连接&quot;类型的sql语句时，应该尽量采用上图中的第一种写法。内连接的两张表用&quot;inner join&quot;连接在一起，使用&quot;on&quot;指明&quot;条件&rdquo;。</p>
+<p>我们刚才说过，在mysql中，&ldquo;内连接&quot;与&quot;交叉连接&quot;的不同之处就是&quot;内连接&quot;语句比&quot;交叉连接&quot;语句有更多的限制条件，那么如果我们把&quot;内连接&quot;的&quot;限制条件&quot;去掉，得出的结果会与&quot;交叉连接&quot;得出的结果相同吗？我们来做一个&quot;实验&rdquo;。</p>
+<p><img src="http://www.zsythink.net/wp-content/uploads/2017/01/011317_0113_9.png" alt="mysql/mariadb知识点总结（16）：select语句总结之三：多表查询"></p>
+<p>从实验结果可以看出，当不附加任何条件时，内连接与交叉连接查询出的结果并没有什么不同，那么反过来想，如果&quot;交叉连接&quot;加上&quot;连接条件&rdquo;，是否与&quot;内连接&quot;查询得到的结果相同呢？我们来试试。</p>
+<p><img src="http://www.zsythink.net/wp-content/uploads/2017/01/011317_0113_10.png" alt="mysql/mariadb知识点总结（16）：select语句总结之三：多表查询"></p>
+<p>好了，实验证明，在mysql中，&ldquo;cross join&quot;与&quot;inner join&quot;似乎可以互相替代，但是在通用的sql标准中，这两者是不同的。</p>
+<p>同时我们得出了一个结论，在通常情况下，使用内连接时需要指定连接条件，换句话说，就是使用&quot;inner join&quot;时一定不要忘记使用&quot;on&quot;指明连接条件。</p>
+<p>此刻，你可能还是没有理解什么是内连接，那么我们换一种解释方式，我们用图示的方法描述一遍什么是内连接。</p>
+<p>我们把t1表与t2表当做两个集合，把t1id与t2id分别当这做两个集合中的元素，可以理解为下图。</p>
+<p><img src="http://www.zsythink.net/wp-content/uploads/2017/01/011317_0113_11.png" alt="mysql/mariadb知识点总结（16）：select语句总结之三：多表查询"></p>
+<p>还记得我们刚才使用的&quot;内连接&quot;查询语句吗，&ldquo;内连接&quot;查询语句如下。</p>
+<p><img src="http://www.zsythink.net/wp-content/uploads/2017/01/011317_0113_12.png" alt="mysql/mariadb知识点总结（16）：select语句总结之三：多表查询"></p>
+<p>即t1id与t2id相同的记录被查询了出来，从结果来看，由于t2表中并不存在id号为1的记录，所以，只查询出了两张表中id号同为2和3的两条记录，用图表示如下</p>
+<p><img src="http://www.zsythink.net/wp-content/uploads/2017/01/011317_0113_13.png" alt="mysql/mariadb知识点总结（16）：select语句总结之三：多表查询"></p>
+<p>这就是所谓的&quot;内连接&rdquo;。</p>
+<p>但是，&ldquo;内连接&quot;还能够分为多种，比如&quot;等值连接&quot;和&quot;不等连接&rdquo;，刚才示例中使用的内连接就属于&quot;等值连接&rdquo;，聪明如你一定想到了，内连接是否属于&quot;等值连接&quot;取决于&quot;连接条件&quot;中有没有使用&quot;等号&rdquo;。</p>
+<p>那么我们给出一个&quot;不等连接&quot;的示例，如下。</p>
+<p><img src="http://www.zsythink.net/wp-content/uploads/2017/01/011317_0113_14.png" alt="mysql/mariadb知识点总结（16）：select语句总结之三：多表查询"></p>
+<p>上图中的&quot;内连接&quot;就属于&quot;不等连接&rdquo;，同样，下图中的&quot;内连接&quot;也属于&quot;不等连接&rdquo;，只要&quot;连接条件&quot;中没有使用&quot;=&quot;作为连接条件的都为&quot;不等连接&rdquo;</p>
+<p><img src="http://www.zsythink.net/wp-content/uploads/2017/01/011317_0113_15.png" alt="mysql/mariadb知识点总结（16）：select语句总结之三：多表查询"></p>
+<p>那么，用&quot;图示&quot;的方法表示上图中的&quot;内连接&quot;语句，可以参考下图。</p>
+<p><img src="http://www.zsythink.net/wp-content/uploads/2017/01/011317_0113_16.png" alt="mysql/mariadb知识点总结（16）：select语句总结之三：多表查询"></p>
+<p>从上图中可以发现，使用&quot;内连接&quot;语句查询出的结果集是两个集合中&quot;同时满足条件的数据&quot;的&quot;组合&rdquo;,所以我们并不能单纯的用&quot;交集&quot;去表示这个组合，就以上图为例，按照&quot;交集&quot;的定义，属于集合A且同时属于集合B的元素所组成的集合被称为交集，但是上图中，id号为1的元素只属于t1表，在t2表中并不存在id号为1的元素，但是，上图中&quot;中间&quot;的结果集就是&quot;内连接&quot;查询出的结果，所以，我们不能单纯的用&quot;交集&quot;表示&quot;内连接&rdquo;，但是，我们可以从另一个角度定义&quot;交集&rdquo;，我们定义，&ldquo;交集&quot;为&quot;两个集合中同时满足条件的数据的组合&rdquo;,那么，我们可以把&quot;内连接&quot;查询出的结果集用下图表示。</p>
+<p><img src="http://www.zsythink.net/wp-content/uploads/2017/01/011317_0113_17.png" alt="mysql/mariadb知识点总结（16）：select语句总结之三：多表查询"></p>
+<p>通过上图去理解&quot;内连接&rdquo;，可能更容易理解一点。</p>
+<p>其实，&ldquo;内连接&quot;除了&quot;等值连接&quot;与&quot;不等连接&rdquo;，还有一种分类，被称作&quot;自连接&rdquo;，自连接可以理解为比较特殊的&quot;内连接&rdquo;,刚才说到的&quot;等值连接&quot;与&quot;不等连接&quot;所连接的表为两张不同的表，而&quot;自连接&quot;连接的表为一张表，也就是自己连接自己，所以被称为&quot;自连接&rdquo;，什么意思呢，我们来动手做个例子。</p>
+<p>有一张students表，数据如下。</p>
+<p><img src="http://www.zsythink.net/wp-content/uploads/2017/01/011317_0113_18.png" alt="mysql/mariadb知识点总结（16）：select语句总结之三：多表查询"></p>
+<p>这张表中存放了&quot;学生&quot;的名字，同时也存放了&quot;老师&quot;的名字,因为这张表里面的学生有可能是其他&quot;学生&quot;的&quot;老师&rdquo;,他们之间互相学习，所以，上表中tid对应的就是学生的id，那么，我们可以通过&quot;自连接&rdquo;,查出每个&quot;学生&quot;的&quot;老师&quot;的名字，示例语句如下。</p>
+<p><img src="http://www.zsythink.net/wp-content/uploads/2017/01/011317_0113_19.png" alt="mysql/mariadb知识点总结（16）：select语句总结之三：多表查询"></p>
+<p>上图中的两个sql语句就属于&quot;自连接&rdquo;，自连接把同一张表当做两张表连接了起来，这就是&quot;自连接&rdquo;，很容易理解吧。</p>
+<p>其实在mysql中，&ldquo;inner join&quot;还可以缩写为&quot;join&rdquo;，他们是等效的，示例如下：</p>
+<p><img src="http://www.zsythink.net/wp-content/uploads/2017/01/011317_0113_20.png" alt="mysql/mariadb知识点总结（16）：select语句总结之三：多表查询"></p>
+<h2 id="外连接left-join--right-join">外连接：left join ， right join</h2>
+<p>&ldquo;外连接&quot;分为两种，&ldquo;左外连接&quot;和&quot;右外连接&rdquo;，我们只要搞明白其中的任意一个，就能明白另一个是什么意思，有了之前的&quot;交叉连接&quot;和&quot;内连接&quot;的基础，再看&quot;外连接&rdquo;，就容易多了。</p>
+<p>那么，我们先来了解了解&quot;左外连接&rdquo;，&ldquo;左外链接&quot;的英文原文为&quot;left outer join&rdquo;，我们可以使用&quot;left outer join&quot;将两张表进行左外链接，我们先来动手做个小例子。</p>
+<p>仍然以t1表与t2表为例，老规矩，先回顾一下两张表中的数据。</p>
+<p><img src="http://www.zsythink.net/wp-content/uploads/2017/01/011317_0113_21.png" alt="mysql/mariadb知识点总结（16）：select语句总结之三：多表查询"></p>
+<p>t1表与t2表中的数据如上图所示，现在，我们将两张表使用&quot;左外链接&quot;连接起来，示例如下。</p>
+<p><img src="http://www.zsythink.net/wp-content/uploads/2017/01/011317_0113_22.png" alt="mysql/mariadb知识点总结（16）：select语句总结之三：多表查询"></p>
+<p>可以看到，上图中查询出的数据似乎跟之前的&quot;内连接&quot;查询出的数据有一部分相同，但是又不是完全相同，我们来对比一下。</p>
+<p><img src="http://www.zsythink.net/wp-content/uploads/2017/01/011317_0113_23.png" alt="mysql/mariadb知识点总结（16）：select语句总结之三：多表查询"></p>
+<p>通过对比，我们发现，在同样的连接条件下，&ldquo;左外连接&quot;查询出的数据更多一点，多出的一行记录由t1表中的id号为1的记录和一条&quot;空记录&quot;组成。</p>
+<p>可是t2表中并不存在id号为1的记录啊，为什么不符合连接条件的记录也会出现在查询结果中呢？这就是左外连接的特性。</p>
+<p>左外连接不仅会查询出两表中同时符合条件的记录的组合，同时还会将&quot;left outer join&quot;左侧的表中的不符合条件的记录同时展示出来，由于左侧表中的这一部分记录并不符合连接条件，所以这一部分记录使用&quot;空记录&quot;进行连接。</p>
+<p>换句话说，左外连接&quot;左侧的表&quot;中的所有记录都会被展示出来，左侧表中符合条件的记录将会与右侧表中符合条件的记录相互连接组合，左侧表中不符合条件的记录将会与右侧表中的&quot;空记录&quot;进行连接。</p>
+<p>上述示例中的t1表就是&quot;left outer join&quot;左侧的表，t2表就是&quot;left outer join&quot;右侧的表，连接条件就是t1id=t2id,虽然t1表中id号为1的记录不满足连接条件，但是仍然会被展示出来，t2表中会使用&quot;空记录&quot;与其进行连接，表示t1表中对应的记录是不满足连接条件的记录。</p>
+<p>如果刚才的描述还是不能让你理解左外连接，那么，我们来画个图看看，仍然使用类似之前&quot;内连接&quot;中的&quot;示意图&quot;进行示意。</p>
+<p><img src="http://www.zsythink.net/wp-content/uploads/2017/01/011317_0113_24.png" alt="mysql/mariadb知识点总结（16）：select语句总结之三：多表查询"></p>
+<p>上图中，两个彩色的集合组成了左外连接查询出的结果集，看到这里，我想你应该已经明白什么是&quot;左外链接&quot;了，既然明白了&quot;左外连接&rdquo;，那么&quot;右外连接&quot;就更容易理解了，左外连接是以连接左侧的表为准，不管左侧表中的记录是否符合连接条件，都会被显示出来并且右侧的表中会使用空记录与之连接，那么&quot;右外连接&quot;就是以连接右侧的表为准，不管右侧表中的记录是否符合连接条件，都会被显示出来并且左侧的表中会使用空记录与之连接，我们来看一个小例子。</p>
+<p><img src="http://www.zsythink.net/wp-content/uploads/2017/01/011317_0113_25.png" alt="mysql/mariadb知识点总结（16）：select语句总结之三：多表查询"></p>
+<p>上述例子中，t2表为&quot;右外连接&quot;右侧的表，t1表为&quot;右外连接&quot;左侧的表，虽然t2表中id号为3的记录并不满足连接条件，但是仍然被展示了出来，t1表中使用空记录与之相连接，那么，用图示的方法表示&quot;右外连接&quot;如下。</p>
+<p><img src="http://www.zsythink.net/wp-content/uploads/2017/01/011317_0113_26.png" alt="mysql/mariadb知识点总结（16）：select语句总结之三：多表查询"></p>
+<p>好了，我想我已经把&quot;左外连接&quot;和&quot;右外连接&quot;说明白了。</p>
+<p>使用&quot;左外连接&quot;或者&quot;右外连接&quot;时，有可能所有记录都符合连接条件，这时就不会出现使用&quot;空记录&quot;连接的情况，比如如下情况。</p>
+<p><img src="http://www.zsythink.net/wp-content/uploads/2017/01/011317_0113_27.png" alt="mysql/mariadb知识点总结（16）：select语句总结之三：多表查询"></p>
+<p>虽然我们使用了右外链接，但是t2表中的所有记录都满足连接条件，所以，t1表中并不会出现&quot;空记录&quot;与t2表中的记录进行连接。</p>
+<p>其实，&ldquo;左外连接&quot;可以简称为&quot;左连接&rdquo;，&ldquo;右外连接&quot;可以简称为&quot;右连接&rdquo;，&ldquo;left outer join&quot;可以简写为 &ldquo;left join&rdquo; ，同理，&ldquo;right outer join&quot;可以简写为&quot;right join&rdquo;，示例如下。</p>
+<p><img src="http://www.zsythink.net/wp-content/uploads/2017/01/011317_0113_28.png" alt="mysql/mariadb知识点总结（16）：select语句总结之三：多表查询"></p>
+<p>其实，我们还可以将左连接与右连接扩展一下，在左连接或者右连接的基础上添加更多的过滤条件，示例如下。</p>
+<p><img src="http://www.zsythink.net/wp-content/uploads/2017/01/011317_0113_29.png" alt="mysql/mariadb知识点总结（16）：select语句总结之三：多表查询"></p>
+<p>我们在之前左连接语句的基础上添加了更多限制条件，使用where子句过滤出了t2表中使用&quot;空记录&quot;连接的记录，那么，所查询出的结果一定是t1表中不符合连接条件的记录。这个结果用图表示可能更容易理解，图示如下。</p>
+<p><img src="http://www.zsythink.net/wp-content/uploads/2017/01/011317_0113_30.png" alt="mysql/mariadb知识点总结（16）：select语句总结之三：多表查询"></p>
+<p>上述示例中的左连接语句查询出了存在于左侧表中，但是不满足连接条件的数据记录，如上图中的集合所示。</p>
+<p>同理，我们也可以在右连接语句上使用同样的方法，示例如下。</p>
+<p><img src="http://www.zsythink.net/wp-content/uploads/2017/01/011317_0113_31.png" alt="mysql/mariadb知识点总结（16）：select语句总结之三：多表查询"></p>
+<p>上图中的右连接语句查询出的结果可以用如下示意图表示。</p>
+<p><img src="http://www.zsythink.net/wp-content/uploads/2017/01/011317_0113_32.png" alt="mysql/mariadb知识点总结（16）：select语句总结之三：多表查询"></p>
+<p>似乎，我们能够适应的场景越来越多了，不过我还没有说完，咱们继续聊。</p>
+<h2 id="联合查询union-与-union-all">联合查询：union 与 union all</h2>
+<p>联合查询比较容易理解，我们可以把联合查询理解成把多个查询语句的查询结果集中在一起显示，语法示例如下。</p>
+<p>select column_name(s) from table_name1 <strong>UNION</strong> select column_name(s) from table_name2</p>
+<p>我们来动手做一个小例子，仍然以t1表与t2表为例。</p>
+<p><img src="http://www.zsythink.net/wp-content/uploads/2017/01/011317_0113_33.png" alt="mysql/mariadb知识点总结（16）：select语句总结之三：多表查询"></p>
+<p>此处，我们将上图中的两条语句使用union连接起来。</p>
+<p><img src="http://www.zsythink.net/wp-content/uploads/2017/01/011317_0113_34.png" alt="mysql/mariadb知识点总结（16）：select语句总结之三：多表查询"></p>
+<p>可以看到，使用union将两条sql语句连接起来以后，两个sql对应的结果集也被集中显示了，是不是很简单。</p>
+<p>从上图可以看出，默认情况下，结果集的字段名以t1表中的为准，如果我们想要以t2表中的为准，可以将t2表对应sql放在union之前，如下。</p>
+<p><img src="http://www.zsythink.net/wp-content/uploads/2017/01/011317_0113_35.png" alt="mysql/mariadb知识点总结（16）：select语句总结之三：多表查询"></p>
+<p>当然，我们也可以使用别名，示例如下。</p>
+<p><img src="http://www.zsythink.net/wp-content/uploads/2017/01/011317_0113_36.png" alt="mysql/mariadb知识点总结（16）：select语句总结之三：多表查询"></p>
+<p>当使用union连接两个查询语句时，两个语句查询出的字段数量必须相同，否则无法使用union进行联合查询，示例如下。</p>
+<p><img src="http://www.zsythink.net/wp-content/uploads/2017/01/011317_0113_37.png" alt="mysql/mariadb知识点总结（16）：select语句总结之三：多表查询"></p>
+<p>上图中的t3表有3个字段，而t2表有两个字段，如果想要使用union将上图中的语句连接，必须使得两个sql的结果集查询出的字段数量相同。</p>
+<p>使用union将两个结果集集中显示时，重复的数据会被合并为一条，示例如下。</p>
+<p><img src="http://www.zsythink.net/wp-content/uploads/2017/01/011317_0113_38.png" alt="mysql/mariadb知识点总结（16）：select语句总结之三：多表查询"></p>
+<p>上图中，t2表中的两条记录与t4表中的两条记录完全相同，所以，使用union查询出的重复结果被合并为一条。</p>
+<p>我们能不能让重复的记录都显示出来呢？必须能啊，union all的作用就在于此，示例如下。</p>
+<p><img src="http://www.zsythink.net/wp-content/uploads/2017/01/011317_0113_39.png" alt="mysql/mariadb知识点总结（16）：select语句总结之三：多表查询"></p>
+<p>使用union all进行联合查询时，如果两条sql语句存在重复的数据，重复的记录会被展示出来。</p>
+<h2 id="全连接full-join">全连接：full join</h2>
+<p>在之前，我们已经总结了mysql中的&quot;交叉连接&rdquo;、&ldquo;内连接&rdquo;、&ldquo;左连接&rdquo;、&ldquo;右连接&quot;以及&quot;联合查询&quot;的多表查询方式，其实在sql标准中，还有一种被称为&quot;全连接&quot;的多表查询方式，&ldquo;全连接&quot;的英文原文为full join，但是在mysql中并不支持&quot;全连接&rdquo;，更准确的说，mysql中不能直接使用&quot;full join&quot;实现全连接，不过，我们可以变相的实现&quot;全连接&rdquo;,在mysql中，我们可以使用&quot;left join&rdquo;、&ldquo;union&rdquo;、&ldquo;right join&quot;的组合实现所谓的&quot;全连接&rdquo;。</p>
+<p>什么意思呢？空口白话的描述实在费劲，我们动手做个小例子，我们用两张简单的表进行示例，t1表与t5表，数据如下。</p>
+<p><img src="http://www.zsythink.net/wp-content/uploads/2017/01/011317_0113_40.png" alt="mysql/mariadb知识点总结（16）：select语句总结之三：多表查询"></p>
+<p>我们先使用左连接查询出对应的数据，如下：</p>
+<p><img src="http://www.zsythink.net/wp-content/uploads/2017/01/011317_0113_41.png" alt="mysql/mariadb知识点总结（16）：select语句总结之三：多表查询"></p>
+<p>使用同样的连接条件，再使用右连接查询出对应的数据。</p>
+<p><img src="http://www.zsythink.net/wp-content/uploads/2017/01/011317_0113_42.png" alt="mysql/mariadb知识点总结（16）：select语句总结之三：多表查询"></p>
+<p>最后，使用union将两条语句连接在一起，即可以在mysql中实现&quot;全连接&quot;所实现的查询功能，示例如下。</p>
+<p><img src="http://www.zsythink.net/wp-content/uploads/2017/01/011317_0113_43.png" alt="mysql/mariadb知识点总结（16）：select语句总结之三：多表查询"></p>
+<p>由于union会将&quot;左连接&quot;与&quot;右连接&quot;查询出的结果集中的重复数据合并，所以，查询出的结果如上图所示。</p>
+<p>如果用图示的方法表示上图中的语句，可以参考如下示意图。</p>
+<p><img src="http://www.zsythink.net/wp-content/uploads/2017/01/011317_0113_44.png" alt="mysql/mariadb知识点总结（16）：select语句总结之三：多表查询"></p>
+<p>&ldquo;全连接&quot;可以使用上图中的彩色集合进行示意。</p>
+<p>与&quot;左连接&quot;或者&quot;右连接&quot;一样，&ldquo;全连接&quot;也可以添加更多的连接条件，没错，聪明如你一定想到了，语句如下</p>
+<p><img src="http://www.zsythink.net/wp-content/uploads/2017/01/011317_0113_45.png" alt="mysql/mariadb知识点总结（16）：select语句总结之三：多表查询"></p>
+<p>那么上图中的语句用图示表示如下，下图中的绿色集合与紫色集合组成了上图中的&quot;全连接语句&quot;查询出的结果集。</p>
+<p><img src="http://www.zsythink.net/wp-content/uploads/2017/01/011317_0113_46.png" alt="mysql/mariadb知识点总结（16）：select语句总结之三：多表查询"></p>
+<p>好了，mysql中的各种常用的多表查询方式我们已经总结完毕，不知道这篇博文对你有没有帮助呢？写博不易，希望大家多多支持，评论和点赞都是免费的哦~嘿嘿嘿~~~！</p>
+
+
+<footer class="footline">
+	
+</footer>
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/zh/mysql/requirements/mysql%E6%93%8D%E4%BD%9C/" title="MySQL操作"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/zh/mysql/requirements/%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%97%A5%E5%BF%97/" title="二进制日志" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1592284880"></script>
+    <script src="/js/perfect-scrollbar.min.js?1592284880"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1592284880"></script>
+    <script src="/js/jquery.sticky.js?1592284880"></script>
+    <script src="/js/featherlight.min.js?1592284880"></script>
+    <script src="/js/highlight.pack.js?1592284880"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom-3.6.0.js?1592284880"></script>
+    <script src="/js/learn.js?1592284880"></script>
+    <script src="/js/hugo-learn.js?1592284880"></script>
+
+    <link href="/mermaid/mermaid.css?1592284880" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1592284880"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-105947713-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  </body>
+</html>
+

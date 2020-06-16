@@ -1,0 +1,57 @@
+[
+{
+	"uri": "https://devops.lijun.in/en/jenkins/",
+	"title": "Jenkins",
+	"tags": [],
+	"description": "",
+	"content": "Chapter 1 Basics Discover what this Hugo theme is all about and the core-concepts behind it.\n"
+},
+{
+	"uri": "https://devops.lijun.in/en/docker/docker-registry/",
+	"title": "Docker-Registry",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://devops.lijun.in/en/docker/",
+	"title": "O - Docker",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://devops.lijun.in/en/jenkins/configuration/",
+	"title": "Configuration",
+	"tags": [],
+	"description": "",
+	"content": "Global site parameters On top of Hugo global configuration, Hugo-theme-learn lets you define the following parameters in your config.toml (here, values are default).\nNote that some of these parameters are explained in details in other sections of this documentation.\n[params] # Prefix URL to edit current page. Will display an \u0026#34;Edit this page\u0026#34; button on top right hand corner of every page. # Useful to give opportunity to people to create merge request for your doc. # See the config.toml file from this documentation site to have an example. editURL = \u0026#34;\u0026#34; # Author of the site, will be used in meta information author = \u0026#34;\u0026#34; # Description of the site, will be used in meta information description = \u0026#34;\u0026#34; # Shows a checkmark for visited pages on the menu showVisitedLinks = false # Disable search function. It will hide search bar disableSearch = false # Javascript and CSS cache are automatically busted when new version of site is generated. # Set this to true to disable this behavior (some proxies don\u0026#39;t handle well this optimization) disableAssetsBusting = false # Set this to true to disable copy-to-clipboard button for inline code. disableInlineCopyToClipBoard = false # A title for shortcuts in menu is set by default. Set this to true to disable it. disableShortcutsTitle = false # When using mulitlingual website, disable the switch language button. disableLanguageSwitchingButton = false # Hide breadcrumbs in the header and only show the current page title disableBreadcrumb = true # Hide Next and Previous page buttons normally displayed full height beside content disableNextPrev = true # Order sections in menu by \u0026#34;weight\u0026#34; or \u0026#34;title\u0026#34;. Default to \u0026#34;weight\u0026#34; ordersectionsby = \u0026#34;weight\u0026#34; # Change default color scheme with a variant one. Can be \u0026#34;red\u0026#34;, \u0026#34;blue\u0026#34;, \u0026#34;green\u0026#34;. themeVariant = \u0026#34;\u0026#34; # Provide a list of custom css files to load relative from the `static/` folder in the site root. custom_css = [\u0026#34;css/foo.css\u0026#34;, \u0026#34;css/bar.css\u0026#34;] Activate search If not already present, add the follow lines in the same config.toml file.\n[outputs] home = [ \u0026#34;HTML\u0026#34;, \u0026#34;RSS\u0026#34;, \u0026#34;JSON\u0026#34;] Learn theme uses the last improvement available in hugo version 20+ to generate a json index file ready to be consumed by lunr.js javascript search engine.\n Hugo generate lunrjs index.json at the root of public folder. When you build the site with hugo server, hugo generates it internally and of course it doesn’t show up in the filesystem\n "
+},
+{
+	"uri": "https://devops.lijun.in/en/jenkins/style-customization/",
+	"title": "Style customization",
+	"tags": [],
+	"description": "",
+	"content": "Hugo-theme-learn has been built to be as configurable as possible by defining multiple partials\nIn themes/hugo-theme-learn/layouts/partials/, you will find all the partials defined for this theme. If you need to overwrite something, don\u0026rsquo;t change the code directly. Instead follow this page. You\u0026rsquo;d create a new partial in the layouts/partials folder of your local project. This partial will have the priority.\nThis theme defines the following partials :\n header: the header of the content page (contains the breadcrumbs). Not meant to be overwritten custom-header: custom headers in page. Meant to be overwritten when adding CSS imports. Don\u0026rsquo;t forget to include style HTML tag directive in your file footer: the footer of the content page (contains the arrows). Not meant to be overwritten custom-footer: custom footer in page. Meant to be overwritten when adding Javacript. Don\u0026rsquo;t forget to include javascript HTML tag directive in your file favicon: the favicon logo: the logo, on top left hand corner. meta: HTML meta tags, if you want to change default behavior menu: left menu. Not meant to be overwritten menu-footer: footer of the the left menu search: search box toc: table of contents  Change the logo Create a new file in layouts/partials/ named logo.html. Then write any HTML you want. You could use an img HTML tag and reference an image created under the static folder, or you could paste a SVG definition !\nThe size of the logo will adapt automatically\n Change the favicon If your favicon is a png, just drop off your image in your local static/images/ folder and name it favicon.png\nIf you need to change this default behavior, create a new file in layouts/partials/ named favicon.html. Then write something like this:\n\u0026lt;link rel=\u0026#34;shortcut icon\u0026#34; href=\u0026#34;/images/favicon.png\u0026#34; type=\u0026#34;image/x-icon\u0026#34; /\u0026gt; Change default colors Hugo Learn theme let you choose between 3 native color scheme variants, but feel free to add one yourself ! Default color scheme is based on Grav Learn Theme.\nRed variant [params] # Change default color scheme with a variant one. Can be \u0026#34;red\u0026#34;, \u0026#34;blue\u0026#34;, \u0026#34;green\u0026#34;. themeVariant = \u0026#34;red\u0026#34; Blue variant [params] # Change default color scheme with a variant one. Can be \u0026#34;red\u0026#34;, \u0026#34;blue\u0026#34;, \u0026#34;green\u0026#34;. themeVariant = \u0026#34;blue\u0026#34; Green variant [params] # Change default color scheme with a variant one. Can be \u0026#34;red\u0026#34;, \u0026#34;blue\u0026#34;, \u0026#34;green\u0026#34;. themeVariant = \u0026#34;green\u0026#34; \u0026lsquo;Yours‘ variant First, create a new CSS file in your local static/css folder prefixed by theme (e.g. with mine theme static/css/theme-mine.css). Copy the following content and modify colors in CSS variables.\n:root{ --MAIN-TEXT-color:#323232; /* Color of text by default */ --MAIN-TITLES-TEXT-color: #5e5e5e; /* Color of titles h2-h3-h4-h5 */ --MAIN-LINK-color:#1C90F3; /* Color of links */ --MAIN-LINK-HOVER-color:#167ad0; /* Color of hovered links */ --MAIN-ANCHOR-color: #1C90F3; /* color of anchors on titles */ --MENU-HEADER-BG-color:#1C90F3; /* Background color of menu header */ --MENU-HEADER-BORDER-color:#33a1ff; /*Color of menu header border */ --MENU-SEARCH-BG-color:#167ad0; /* Search field background color (by default borders + icons) */ --MENU-SEARCH-BOX-color: #33a1ff; /* Override search field border color */ --MENU-SEARCH-BOX-ICONS-color: #a1d2fd; /* Override search field icons color */ --MENU-SECTIONS-ACTIVE-BG-color:#20272b; /* Background color of the active section and its childs */ --MENU-SECTIONS-BG-color:#252c31; /* Background color of other sections */ --MENU-SECTIONS-LINK-color: #ccc; /* Color of links in menu */ --MENU-SECTIONS-LINK-HOVER-color: #e6e6e6; /* Color of links in menu, when hovered */ --MENU-SECTION-ACTIVE-CATEGORY-color: #777; /* Color of active category text */ --MENU-SECTION-ACTIVE-CATEGORY-BG-color: #fff; /* Color of background for the active category (only) */ --MENU-VISITED-color: #33a1ff; /* Color of \u0026#39;page visited\u0026#39; icons in menu */ --MENU-SECTION-HR-color: #20272b; /* Color of \u0026lt;hr\u0026gt; separator in menu */ } body { color: var(--MAIN-TEXT-color) !important; } textarea:focus, input[type=\u0026#34;email\u0026#34;]:focus, input[type=\u0026#34;number\u0026#34;]:focus, input[type=\u0026#34;password\u0026#34;]:focus, input[type=\u0026#34;search\u0026#34;]:focus, input[type=\u0026#34;tel\u0026#34;]:focus, input[type=\u0026#34;text\u0026#34;]:focus, input[type=\u0026#34;url\u0026#34;]:focus, input[type=\u0026#34;color\u0026#34;]:focus, input[type=\u0026#34;date\u0026#34;]:focus, input[type=\u0026#34;datetime\u0026#34;]:focus, input[type=\u0026#34;datetime-local\u0026#34;]:focus, input[type=\u0026#34;month\u0026#34;]:focus, input[type=\u0026#34;time\u0026#34;]:focus, input[type=\u0026#34;week\u0026#34;]:focus, select[multiple=multiple]:focus { border-color: none; box-shadow: none; } h2, h3, h4, h5 { color: var(--MAIN-TITLES-TEXT-color) !important; } a { color: var(--MAIN-LINK-color); } .anchor { color: var(--MAIN-ANCHOR-color); } a:hover { color: var(--MAIN-LINK-HOVER-color); } #sidebar ul li.visited \u0026gt; a .read-icon { color: var(--MENU-VISITED-color); } #body a.highlight:after { display: block; content: \u0026#34;\u0026#34;; height: 1px; width: 0%; -webkit-transition: width 0.5s ease; -moz-transition: width 0.5s ease; -ms-transition: width 0.5s ease; transition: width 0.5s ease; background-color: var(--MAIN-LINK-HOVER-color); } #sidebar { background-color: var(--MENU-SECTIONS-BG-color); } #sidebar #header-wrapper { background: var(--MENU-HEADER-BG-color); color: var(--MENU-SEARCH-BOX-color); border-color: var(--MENU-HEADER-BORDER-color); } #sidebar .searchbox { border-color: var(--MENU-SEARCH-BOX-color); background: var(--MENU-SEARCH-BG-color); } #sidebar ul.topics \u0026gt; li.parent, #sidebar ul.topics \u0026gt; li.active { background: var(--MENU-SECTIONS-ACTIVE-BG-color); } #sidebar .searchbox * { color: var(--MENU-SEARCH-BOX-ICONS-color); } #sidebar a { color: var(--MENU-SECTIONS-LINK-color); } #sidebar a:hover { color: var(--MENU-SECTIONS-LINK-HOVER-color); } #sidebar ul li.active \u0026gt; a { background: var(--MENU-SECTION-ACTIVE-CATEGORY-BG-color); color: var(--MENU-SECTION-ACTIVE-CATEGORY-color) !important; } #sidebar hr { border-color: var(--MENU-SECTION-HR-color); } Then, set the themeVariant value with the name of your custom theme file. That\u0026rsquo;s it !\n[params] # Change default color scheme with a variant one. Can be \u0026#34;red\u0026#34;, \u0026#34;blue\u0026#34;, \u0026#34;green\u0026#34;. themeVariant = \u0026#34;mine\u0026#34; "
+},
+{
+	"uri": "https://devops.lijun.in/en/",
+	"title": "Learn Theme for Hugo",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://devops.lijun.in/en/categories/",
+	"title": "Categories",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://devops.lijun.in/en/tags/",
+	"title": "Tags",
+	"tags": [],
+	"description": "",
+	"content": ""
+}]

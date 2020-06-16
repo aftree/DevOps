@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>备份脚本 on Hugo 主题的 Learn 文档</title>
+    <link>https://devops.lijun.in/zh/mysql/style-customization/</link>
+    <description>Recent content in 备份脚本 on Hugo 主题的 Learn 文档</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Sat, 09 Apr 2016 16:50:16 +0200</lastBuildDate>
+    
+	<atom:link href="https://devops.lijun.in/zh/mysql/style-customization/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>配置文件</title>
+      <link>https://devops.lijun.in/zh/mysql/style-customization/%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/</link>
+      <pubDate>Sat, 09 Apr 2016 16:50:16 +0200</pubDate>
+      
+      <guid>https://devops.lijun.in/zh/mysql/style-customization/%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/</guid>
+      <description>read_rnd_buffer_size = 8M sort_buffer_size = 8M join_buffer_size = 8M key_buffer_size = 256M thread_cache_size = 64 sql_mode=NO_ENGINE_SUBSTITUTION query_cache_type = 1 query_cache_size = 64M query_cache_limit = 2M ft_min_word_len = 4 log_bin = mysql-bin binlog_format = mixed expire_logs_days = 7 log_error = /data/mysql/mysql-error.log #log = /data/mysql/mysql.log slow_query_log = 1 long_query_time = 1 slow_query_log_file = /data/mysql/mysql-slow.log performance_schema = 0 explicit_defaults_for_timestamp lower_case_table_names = 1 skip-external-locking default_storage_engine = InnoDB #default-storage-engine = MyISAM innodb_file_per_table = 1 innodb_open_files = 500 innodb_buffer_pool_size = 1024M innodb_write_io_threads = 4 innodb_read_io_threads = 4 innodb_thread_concurrency = 0 innodb_purge_threads = 1 innodb_flush_log_at_trx_commit = 2 innodb_log_buffer_size = 2M innodb_log_file_size = 32M innodb_log_files_in_group = 3 innodb_max_dirty_pages_pct = 90 innodb_lock_wait_timeout = 120 bulk_insert_buffer_size = 8M myisam_sort_buffer_size = 64M myisam_max_sort_file_size = 10G myisam_repair_threads = 1 interactive_timeout = 28800 wait_timeout = 28800 [mysqldump] quick max_allowed_packet = 500M [myisamchk] key_buffer_size = 256M sort_buffer_size = 8M read_buffer = 4M write_buffer = 4M </description>
+    </item>
+    
+  </channel>
+</rss>

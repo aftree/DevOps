@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://devops.lijun.in/zh/docker/docker-registry/</loc>
+    <lastmod>2016-04-09T16:50:16+02:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://devops.lijun.in/en/docker/docker-registry/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://devops.lijun.in/zh/docker/docker-registry/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://devops.lijun.in/zh/ansible/</loc>
+    <lastmod>2016-04-09T16:50:16+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://devops.lijun.in/zh/docker/</loc>
+    <lastmod>2016-04-09T16:50:16+02:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://devops.lijun.in/en/docker/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://devops.lijun.in/zh/docker/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://devops.lijun.in/zh/gitlab/</loc>
+    <lastmod>2016-04-09T16:50:16+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://devops.lijun.in/zh/jenkins/</loc>
+    <lastmod>2016-04-09T16:50:16+02:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://devops.lijun.in/en/jenkins/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://devops.lijun.in/zh/jenkins/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://devops.lijun.in/zh/maven/</loc>
+    <lastmod>2016-04-09T16:50:16+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://devops.lijun.in/zh/mysql/</loc>
+    <lastmod>2016-04-09T16:50:16+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://devops.lijun.in/zh/prometheus/</loc>
+    <lastmod>2016-04-09T16:50:16+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://devops.lijun.in/zh/terraform/</loc>
+    <lastmod>2016-04-09T16:50:16+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://devops.lijun.in/zh/zabbix/</loc>
+    <lastmod>2016-04-09T16:50:16+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://devops.lijun.in/zh/kvm/</loc>
+  </url>
+  
+  <url>
+    <loc>https://devops.lijun.in/zh/jenkins/requirements/</loc>
+  </url>
+  
+  <url>
+    <loc>https://devops.lijun.in/zh/mysql/requirements/mysql%E6%93%8D%E4%BD%9C/</loc>
+  </url>
+  
+  <url>
+    <loc>https://devops.lijun.in/zh/kvm/requirements/</loc>
+  </url>
+  
+  <url>
+    <loc>https://devops.lijun.in/zh/mysql/requirements/sql%E8%AF%AD%E5%8F%A5/</loc>
+  </url>
+  
+  <url>
+    <loc>https://devops.lijun.in/zh/mysql/requirements/%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%97%A5%E5%BF%97/</loc>
+  </url>
+  
+  <url>
+    <loc>https://devops.lijun.in/zh/mysql/requirements/</loc>
+  </url>
+  
+  <url>
+    <loc>https://devops.lijun.in/zh/jenkins/installation/</loc>
+  </url>
+  
+  <url>
+    <loc>https://devops.lijun.in/zh/kvm/installation/</loc>
+  </url>
+  
+  <url>
+    <loc>https://devops.lijun.in/zh/mysql/installation/</loc>
+  </url>
+  
+  <url>
+    <loc>https://devops.lijun.in/zh/docker/docker-registry/registry/</loc>
+  </url>
+  
+  <url>
+    <loc>https://devops.lijun.in/zh/ansible/configuration/</loc>
+    <lastmod>2016-04-09T16:50:16+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://devops.lijun.in/zh/gitlab/configuration/</loc>
+    <lastmod>2016-04-09T16:50:16+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://devops.lijun.in/zh/maven/configuration/</loc>
+    <lastmod>2016-04-09T16:50:16+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://devops.lijun.in/zh/mysql/configuration/</loc>
+    <lastmod>2016-04-09T16:50:16+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://devops.lijun.in/zh/prometheus/configuration/</loc>
+    <lastmod>2016-04-09T16:50:16+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://devops.lijun.in/zh/terraform/configuration/</loc>
+    <lastmod>2016-04-09T16:50:16+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://devops.lijun.in/zh/zabbix/configuration/</loc>
+    <lastmod>2016-04-09T16:50:16+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://devops.lijun.in/zh/docker/docker-registry/harbor/</loc>
+    <lastmod>2016-04-09T16:50:16+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://devops.lijun.in/zh/jenkins/style-customization/</loc>
+    <lastmod>2016-04-09T16:50:16+02:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://devops.lijun.in/en/jenkins/style-customization/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://devops.lijun.in/zh/jenkins/style-customization/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://devops.lijun.in/zh/mysql/style-customization/</loc>
+    <lastmod>2016-04-09T16:50:16+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://devops.lijun.in/zh/mysql/style-customization/%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/</loc>
+    <lastmod>2016-04-09T16:50:16+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://devops.lijun.in/zh/</loc>
+    <lastmod>2016-04-09T16:50:16+02:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://devops.lijun.in/en/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://devops.lijun.in/zh/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://devops.lijun.in/zh/categories/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://devops.lijun.in/en/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://devops.lijun.in/zh/categories/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://devops.lijun.in/zh/credits/</loc>
+  </url>
+  
+  <url>
+    <loc>https://devops.lijun.in/zh/showcase/</loc>
+  </url>
+  
+  <url>
+    <loc>https://devops.lijun.in/zh/tags/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://devops.lijun.in/en/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://devops.lijun.in/zh/tags/"
+                />
+  </url>
+  
+</urlset>
